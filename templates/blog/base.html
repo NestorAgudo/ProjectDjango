@@ -1,0 +1,96 @@
+{% load static %}
+
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="">
+  <title>Blog Tecno</title>
+  <link href={% static "blog/css/bootstrap.min.css" %} rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href={% static 'blog/css/"css/blog.css' %} rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+  <section class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href= {% url 'inicio' %} class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <img class="bi me-2" width="40" height="32" src= {% static "blog/img/logo-tecno.png" %}>
+        <span class="fs-4">Blog Tecno</span>
+      </a>
+      <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <img src= {% static "blog/img/user.jpg"%} alt="mdo" width="32" height="32" class="rounded-circle">
+      </a>
+    </header>
+
+    <main class="mt-2">
+
+
+      <section class="row g-5">
+        <!-- TODOS LOS POSTS -->
+        <section class="col-md-9">
+
+        {% block contenido %}
+        
+        {% endblock contenido %}
+        
+        </section>
+
+        <!-- ASIDE -->
+        <aside class="col-md-3">
+          <section class="position-sticky" style="top: 2rem;">
+
+            <article class="p-4 mb-3 bg-light rounded">
+              <h4 class="fst-italic text-center">Acerca de</h4>
+              <p class="mb-0 text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae totam sit
+                unde
+                laboriosam
+                facere, numquam fuga similique hic, officia ratione fugiat, exercitationem deleniti velit inventore
+                tenetur earum distinctio quasi eveniet.</p>
+            </article>
+
+            <article class="p-4 text-center">
+              <h4 class="fst-italic">Categorías</h4>
+              <ol class="list-unstyled mb-0">
+                <li><a class=text-decoration-none href={% url 'categoria' %}>Categoría #</a></li>
+                <li><a class=text-decoration-none href={% url 'categoria' %}>Categoría #</a></li>
+              </ol>
+            </article>
+
+            <article class="p-4 text-center">
+              <h4 class="fst-italic">Archivos</h4>
+              <ol class="list-unstyled mb-0">
+                <li><a class=text-decoration-none href={% url 'archivo' %}>Julio 2023</a></li>
+                <li><a class=text-decoration-none href={% url 'archivo' %}>Junio 2023</a></li>
+                <li><a class=text-decoration-none href={% url 'archivo' %}>Mayo 2023</a></li>
+              </ol>
+            </article>
+
+            <article class="p-4 text-center">
+              <h4 class="fst-italic">Nuestras redes</h4>
+              <ol class="list-unstyled">
+                <li><a class=text-decoration-none href="#" target="_blank"><i class="bi bi-github"></i> GitHub</a></li>
+                <li><a class=text-decoration-none href="#" target="_blank"><i class="bi bi-linkedin"></i> Linkedin</a>
+                </li>
+              </ol>
+            </article>
+
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="blog-footer">
+      <p>Miguel Puente todos los derechos reservados ©</p>
+      <p><a href="#"><i class="bi bi-arrow-bar-up text-dark"></i></a></p>
+    </footer>
+  </section>
+</body>
+
+</html>

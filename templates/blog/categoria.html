@@ -1,0 +1,62 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<section class="alert alert-success" role="alert">
+    Todos los Posts con la categoría: <strong>CATEGORIA</strong>
+  </section>
+
+  <!-- POST 1 -->
+  <article class="card mb-3">
+    <section class="row g-0">
+      <figure class="col-md-5">
+        <img src= {% static 'blog/img/trabajo.png' %} class="img-fluid rounded-end float-end" alt="...">
+      </figure>
+      <section class="col-md-7">
+        <section class="card-body">
+          <strong class="d-inline-block mb-2 text-primary">Categoría</strong>
+          <h4 class="mb-0">Título del Post</h4>
+          <p class="mb-1 text-muted">Nov 12</p>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to
+            additional content.</p>
+          <p class="card-text">
+            <small class="text-muted">
+              <a href={% url 'articulo' %} class="stretched-link">Seguir leyendo</a>
+            </small>
+          </p>
+        </section>
+      </section>
+    </section>
+  </article>
+
+  <!-- POST 2 -->
+  <article class="card mb-3">
+    <section class="row g-0">
+      <section class="col-md-7">
+        <section class="card-body">
+          <strong class="d-inline-block mb-2 text-primary">Categoría</strong>
+          <h4 class="mb-0">Título del Post</h4>
+          <p class="mb-1 text-muted">Nov 12</p>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to
+            additional content.</p>
+          <p class="card-text">
+            <small class="text-muted">
+              <a href={% url 'articulo' %} class="stretched-link">Seguir leyendo</a>
+            </small>
+          </p>
+        </section>
+      </section>
+      <figure class="col-md-5">
+        <img src= {% static 'blog/img/contact-bg.png' %} class="img-fluid rounded-end float-end" alt="...">
+      </figure>
+    </section>
+  </article>
+
+  <section class="my-3 mt-5 mb-5">
+    <a class="btn btn-dark rounded-pill" href= {% url 'inicio' %} >Volver al Inicio</a>
+  </section>
+
+{% endblock contenido %}
+
+

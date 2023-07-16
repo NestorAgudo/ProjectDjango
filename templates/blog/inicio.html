@@ -1,0 +1,73 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block contenido %}
+          <!-- ULTIMO POST - ARRIBA DE TODO -->
+          <article class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+            <section class="col-md-12 px-0">
+              <h1 class="display-4 fst-italic text-white">Título del último post</h1>
+              <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and
+                efficiently about what’s most interesting in this post’s contents.</p>
+              <p class="lead mb-0"><a href= {% url 'articulo' %} class="text-white fw-bold">Seguir leyendo...</a></p>
+            </section>
+          </article>
+
+          <!-- POST 1 -->
+          <article class="card mb-3">
+            <section class="row g-0">
+              <figure class="col-md-5">
+                <img src={% static "blog/img/trabajo.png" %} class="img-fluid rounded-end float-end" alt="...">
+              </figure>
+              <section class="col-md-7">
+                <section class="card-body">
+                  <strong class="d-inline-block mb-2 text-primary">Categoría</strong>
+                  <h4 class="mb-0">Título del Post</h4>
+                  <p class="mb-1 text-muted">Nov 12</p>
+                  <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to
+                    additional content.</p>
+                  <p class="card-text">
+                    <small class="text-muted">
+                      <a href= {% url 'articulo' %} class="stretched-link">Seguir leyendo</a>
+                    </small>
+                  </p>
+                </section>
+              </section>
+            </section>
+          </article>
+
+          <!-- POST 2 -->
+          <article class="card mb-3">
+            <section class="row g-0">
+              <section class="col-md-7">
+                <section class="card-body">
+                  <strong class="d-inline-block mb-2 text-primary">Categoría</strong>
+                  <h4 class="mb-0">Título del Post</h4>
+                  <p class="mb-1 text-muted">Nov 12</p>
+                  <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to
+                    additional content.</p>
+                  <p class="card-text">
+                    <small class="text-muted">
+                      <a href="articulo.html" class="stretched-link">Seguir leyendo</a>
+                    </small>
+                  </p>
+                </section>
+              </section>
+              <figure class="col-md-5">
+                <img src={% static "blog/img/contact-bg.png" %} class="img-fluid rounded-end float-end" alt="...">
+              </figure>
+            </section>
+          </article>
+
+          <!-- NAVEGACION ENTRE ARTICULOS MAS ANTIGUOS - PAGINACION -->
+          <nav aria-label="...">
+            <ul class="pagination justify-content-center mt-5 mb-5">
+              <li class="page-item"><a class="page-link" href="?pagina=1">Inicio</a></li>
+              <li class="page-item disabled"><a class="page-link" href="">Anterior</a></li>
+              <li class="page-item active"><a class="page-link text-bg-dark" href="">1</a></li>
+              <li class="page-item disabled"><a class="page-link" href="">Siguiente</a></li>
+              <li class="page-item"><a class="page-link" href="">Última</a></li>
+            </ul>
+          </nav>
+
+
+{% endblock contenido %}
